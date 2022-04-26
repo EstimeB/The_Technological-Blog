@@ -2,7 +2,7 @@ const sequelize = require('../config/connection');
 const { User, Comment, Blog } = require('../models');
 
 const userData = require('./userData.json');
-const projectData = require('./projectData.json');
+const blogData = require('./projectData.json');
 const commentData = require('./commentData.json');
 
 const seedDatabase = async () => {
@@ -13,7 +13,7 @@ const seedDatabase = async () => {
     returning: true,
   });
 
-  await Blog.bulkCreate(projectData);
+  await Blog.bulkCreate(blogData);
   await Comment.bulkCreate(commentData);
 };
 
