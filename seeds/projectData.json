@@ -1,0 +1,14 @@
+[
+  {
+    "name": "TechCrunch",
+    "description": "Founded by Michael Arrington and later sold to AOL, TechCrunch has remained as one of the leaders covering tech industry news."
+  },
+  {
+    "name": "Gizmodo",
+    "description": "Originally launched as a part of Gawker Media Network, Gizmodo is a design, technology, science and science fiction website that also features articles on politics."
+  },
+  {
+    "name": "Ars Technica",
+    "description": "Founded by Ken Fisher over 20 years ago, Arstechnica (Art of Technology) is devoted to the latest technology that would cater to what he called 'alpha geeks': technologists and IT professionals."
+  }
+]
