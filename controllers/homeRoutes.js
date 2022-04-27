@@ -74,6 +74,10 @@ router.get('/', async (req, res) => {
   }
 });
 
+router.get('/signup', (req, res) => {
+  res.render("signup");
+})
+
 router.get('/comment/:id', async (req, res) => {
   try {
     const commentData = await Comment.findByPk(req.params.id, {
@@ -98,20 +102,22 @@ router.get('/comment/:id', async (req, res) => {
 
 // Use withAuth middleware to prevent access to route
 router.get('/dashboard', withAuth, async (req, res) => {
+  console.log(req.session,"dashboard");
   try {
     // Find the logged in user based on the session ID
     const userData = await User.findByPk(req.session.user_id, {
       attributes: { exclude: ['password'] },
-      include: [{ model: blog }],
+      // include: [{ model: blog }],
     });
 
     const user = userData.get({ plain: true });
-
+    console.log(user,"user data");
     res.render('dashboard', {
       ...user,
       logged_in: true,
     });
   } catch (err) {
+    console.log(err)
     res.status(500).json(err);
   }
 });

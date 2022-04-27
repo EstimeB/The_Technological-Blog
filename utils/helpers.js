@@ -1,6 +1,7 @@
+const moment = require('moment');
+
 module.exports = {
-  format_date: (date) => {
-    // Format date as MM/DD/YYYY
-    return date.toLocaleDateString();
+  format_date: () => {
+    return moment().format('l');
   },
 };
