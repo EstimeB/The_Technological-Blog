@@ -40,7 +40,7 @@ router.get('/blog/:id', async (req, res) => {
 
     const blog = blogData.get({ plain: true });
 
-    res.render('blog', {
+    res.render('dashboard', {
       ...blog,
       logged_in: req.session.logged_in,
     });
@@ -49,60 +49,55 @@ router.get('/blog/:id', async (req, res) => {
   }
 });
 
-router.get('/', async (req, res) => {
+router.get('/signup', (req, res) => {
+  res.render('signup');
+});
+
+router.get('/comment/:id', async (req, res) => {
   try {
     // Get all projects and JOIN with user data
     const commentData = await Comment.findAll({
       include: [
         {
           model: User,
-          attributes: ['user_name'],
+          attributes: ['blog_id'],
         },
       ],
     });
 
-    // Serialize data so the template can read it
     const comments = commentData.map((comment) => comment.get({ plain: true }));
 
-    // Pass serialized data and session flag into template
-    res.render('homepage', {
+    res.render('blog', {
       comments,
       logged_in: req.session.logged_in,
     });
   } catch (err) {
     res.status(500).json(err);
   }
-});
+  // try {
+  //   const commentData = await Comment.findByPk(req.params.id, {
+  //     include: [
+  //       {
+  //         model: User,
+  //         attributes: ['blog_id'],
+  //       },
+  //     ],
+  //   });
 
-router.get('/signup', (req, res) => {
-  res.render("signup");
-})
+  //   const comment = commentData.get({ plain: true });
 
-router.get('/comment/:id', async (req, res) => {
-  try {
-    const commentData = await Comment.findByPk(req.params.id, {
-      include: [
-        {
-          model: User,
-          attributes: ['user_name'],
-        },
-      ],
-    });
-
-    const comment = commentData.get({ plain: true });
-
-    res.render('blog', {
-      ...comment,
-      logged_in: req.session.logged_in,
-    });
-  } catch (err) {
-    res.status(500).json(err);
-  }
+  //   res.render('blog', {
+  //     ...comment,
+  //     logged_in: req.session.logged_in,
+  //   });
+  // } catch (err) {
+  //   res.status(500).json(err);
+  // }
 });
 
 // Use withAuth middleware to prevent access to route
-router.get('/dashboard', withAuth, async (req, res) => {
-  console.log(req.session,"dashboard");
+router.get('/homepage', withAuth, async (req, res) => {
+  console.log(req.session,'dashboard');
   try {
     // Find the logged in user based on the session ID
     const userData = await User.findByPk(req.session.user_id, {
@@ -111,13 +106,13 @@ router.get('/dashboard', withAuth, async (req, res) => {
     });
 
     const user = userData.get({ plain: true });
-    console.log(user,"user data");
-    res.render('dashboard', {
+    console.log(user,'user data');
+    res.render('homepage', {
       ...user,
       logged_in: true,
     });
   } catch (err) {
-    console.log(err)
+    console.log(err);
     res.status(500).json(err);
   }
 });
@@ -125,7 +120,7 @@ router.get('/dashboard', withAuth, async (req, res) => {
 router.get('/login', (req, res) => {
   // If the user is already logged in, redirect the request to another route
   if (req.session.logged_in) {
-    res.redirect('/dashboard');
+    res.redirect('/homepage');
     return;
   }
 

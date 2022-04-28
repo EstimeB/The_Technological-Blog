@@ -1,44 +1,48 @@
-<div class='row'>
-  <div class='col-auto'>
-    <h2>Welcome, {{user_name}}!</h2>
-  </div>
-</div>
-
 <div class='row mt-4'>
-  {{!-- {{#if blogs.length}} --}}
-    <div class='col-md-6 post-list'>
-      <h3>Most Recent Post:</h3>
-
-      {{#each blogs as |blog|}}
-        <div class='row mb-2'>
-          <div class='col-md-8'>
-            <h4><a href='/blog/{{id}}'>{{name}}</a></h4>
+  <!-- <div class='col-md-6 post-list'>
+        <h3>Most Recent Post</h3>
+  
+          <div class='row mb-2'>
+            <div class='col-md-8'>
+              <h4><a href='/blog/{{id}}'>TechCrunch</a></h4>
+            </div>
+            <div class='col-md-4'>
+              <button
+                class='btn btn-sm btn-danger'
+                data-id='{{blog.id}}'
+              >DELETE</button>
+            </div>
           </div>
-          <div class='col-md-4'>
-            <button
-              class='btn btn-sm btn-danger'
-              data-id='{{blog.id}}'
-            >DELETE</button>
-          </div>
-        </div>
-      {{/each}}
-    </div>
-  {{!-- {{/if}} --}}
+      </div> -->
 
-  <div class='col-md-6'>
-    <h3>Create a New Post</h3>
+  <div class='col-md-6 signF'>
+    <h3 class='h2'>Create New Post</h3>
 
-    <form class='form new-post-form'>
+    <form class='form new-post-form signL'>
       <div class='form-group'>
-        <label for='post-name'>Blog Title:</label>
-        <input class='form-input' type='text' id='post-name' name='post-name' />
+        <label for='post-name'>Title</label>
+        <br />
+        <input
+          class='form-input ifeatures'
+          type='text'
+          id='post-name'
+          name='post-name'
+        />
+        <br />
       </div>
+      <br />
       <div class='form-group'>
-        <label for='post-desc'>Post Description:</label>
-        <textarea class='form-input' id='post-desc' name='post-desc'></textarea>
+        <label for='post-desc'>Content</label>
+        <br>
+        <textarea
+          class='form-input dashtext'
+          id='post-desc'
+          name='post-desc'
+        ></textarea>
       </div>
+      <br />
       <div class='form-group'>
-        <button type='submit' class='btn btn-primary'>Post</button>
+        <button type='submit' class='btn btn-primary signupBtn'>Create</button>
       </div>
     </form>
   </div>
