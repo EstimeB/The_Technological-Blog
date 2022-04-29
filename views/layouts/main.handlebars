@@ -10,34 +10,36 @@
 </head>
 
 <body>
-  <div class="flex-column justify-space-around">
-    <header class="display-flex justify-space-between align-center p-2">
-      <h1>
-        <span role="img" aria-label="speech-ballon">💬</span>
-        <a href="/">The Tech Blog</a>
-      </h1>
-      <nav>
-        <!-- Conditionally render login or logout links -->
-        {{#if logged_in}}
-        <a href="/">Home</a> |
-        <a href="/dashboard">Dashboard</a> |
-        <button class="no-button" id="logout">logout</button>
+  <header class="display-flex justify-space-between align-center p-2 theBar">
+    <nav>
+      <!-- Conditionally render login or logout links -->
+      {{#if logged_in}}
+      <ul class="navInline">
+        <li><a href="/">Home</a></li>
+        <li><a href="/dashboard">Dashboard</a></li>
+        <li><button class="no-button logbnt" id="logout">Logout</button></li>
         {{else}}
-        <a href="/">Home</a> |
-        <a href="/dashboard">Dashboard</a> |
-        <a href="/login">login</a>
-        <a href="/signup">signup</a> |
+        <li><a href="/">Home</a>
+        <li>
+        <li><a href="/dashboard">Dashboard</a>
+        <li>
+        <li class="slash">
+          <a href="/login">Login</a> /
+          <a href="/signup">Signup</a>
+        </li>
         {{/if}}
-      </nav>
-    </header>
-    <main class="container container-fluid mt-5">
-      <!-- Render the sub layout -->
-      {{{ body }}}
-    </main>
-    <footer>
-      
-    </footer>
-  </div>
+      </ul>
+      <br>
+      <div class="logo">
+        <span role="img" aria-label="speech-ballon" class="mImg">💬</span>
+        <h1 class="shadow"><a href="/" class="mtitle">The Tech Blog</a></h1>
+      </div>
+    </nav>
+  </header>
+  <main>
+    <!-- Render the sub layout -->
+    {{{ body }}}
+  </main>
 
   <!-- Render script for logged in users only -->
   {{#if logged_in}}
