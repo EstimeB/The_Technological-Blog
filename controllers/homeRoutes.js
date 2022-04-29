@@ -97,7 +97,7 @@ router.get('/comment/:id', async (req, res) => {
 
 // Use withAuth middleware to prevent access to route
 router.get('/homepage', withAuth, async (req, res) => {
-  console.log(req.session,'dashboard');
+  console.log(req.session, 'homepage');
   try {
     // Find the logged in user based on the session ID
     const userData = await User.findByPk(req.session.user_id, {
@@ -106,7 +106,7 @@ router.get('/homepage', withAuth, async (req, res) => {
     });
 
     const user = userData.get({ plain: true });
-    console.log(user,'user data');
+    console.log(user, 'user data');
     res.render('homepage', {
       ...user,
       logged_in: true,
@@ -127,4 +127,28 @@ router.get('/login', (req, res) => {
   res.render('login');
 });
 
+router.get('/dashboard', withAuth, async (req, res) => {
+  console.log(req.session, 'homepage');
+  try {
+    // Find the logged in user based on the session ID
+    if (req.session.user_id) {
+      const blogData = await Blog.findAll();
+
+      const blogs = blogData.map((blog) => blog.get({ plain: true }));
+      console.log(blogs, 'ublog data');
+      res.render('dashboard', {
+        ...blogs,
+        user_name:req.session.user_name,
+        user_id:req.session.use_id,
+        email:req.session.email,
+        logged_in: true,
+      });
+    } else {
+      res.redirect('/login');
+    }
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+});
 module.exports = router;
