@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>The Tech Blog</title>
-  <link rel="stylesheet" href="/css/jass.css">
+  {{!-- <link rel="stylesheet" href="/css/jass.css"> --}}
   <link rel="stylesheet" href="/css/style.css">
 </head>
 
@@ -18,17 +18,17 @@
         <li><a href="/">Home</a></li>
         <li><a href="/dashboard">Dashboard</a></li>
         <li><button class="no-button logbnt" id="logout">Logout</button></li>
+      </ul>
         {{else}}
-        <li><a href="/">Home</a>
-        <li>
-        <li><a href="/dashboard">Dashboard</a>
-        <li>
-        <li class="slash">
+      <ul class="navInline">
+        <li class="pain"><a href="/">Home</a></li>
+        <li class="pain"><a href="/dashboard">Dashboard</a></li>
+        <li class="slash pain">
           <a href="/login">Login</a> /
           <a href="/signup">Signup</a>
         </li>
-        {{/if}}
       </ul>
+        {{/if}}
       <br>
       <div class="logo">
         <span role="img" aria-label="speech-ballon" class="mImg">💬</span>
@@ -36,6 +36,7 @@
       </div>
     </nav>
   </header>
+  <br><br>
   <main>
     <!-- Render the sub layout -->
     {{{ body }}}

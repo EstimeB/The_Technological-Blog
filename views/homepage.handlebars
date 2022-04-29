@@ -1,16 +1,16 @@
 <!-- Loop over each object in the projects array -->
 {{#each blogs as |blog| }}
-<div class="row mb-4 project signF">
-  <div class="col-md-5 blogrow">
+<div class="signF">
+  <div class="blogrow">
     <h2>
       <!-- Call helper function with triple brackets to render the emoji span as HTML -->
       <a class="blogtitle" href="/blog/{{blog.id}}">{{blog.name}}</a>
     </h2>
     <p class="pPost">Posted by {{user_name}} on {{format_date}}</p>
   </div>
-  <p class="signL">
+  <p class="signO">
     {{blog.post_description}}
   </p>
 </div>
-</div>
+  <br>
 {{/each}}
