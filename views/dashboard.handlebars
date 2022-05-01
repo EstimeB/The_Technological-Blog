@@ -1,43 +1,19 @@
-<div class='row mt-4'>
-  <!-- <div class='col-md-6 post-list'>
-        <h3>Most Recent Post</h3>
-  
-          <div class='row mb-2'>
-            <div class='col-md-8'>
-              <h4><a href='/blog/{{id}}'>TechCrunch</a></h4>
-            </div>
-            <div class='col-md-4'>
-              <button
-                class='btn btn-sm btn-danger'
-                data-id='{{blog.id}}'
-              >DELETE</button>
-            </div>
-          </div>
-      </div> -->
-
-  <div class='col-md-6 signF'>
-    <h3 class='h2'>Create New Post</h3>
-
-    <form class='form new-post-form signL'>
-      <div class='form-group'>
-        <label for='post-name'>Title</label>
-        <br />
-        <input class='form-input ifeatures' type='text' id='post-name' name='post-name' />
-        <br />
-      </div>
-      <br />
-      <div class='form-group'>
-        <label for='post-desc'>Content</label>
-        <br>
-        <textarea class='form-input rowdash' id='post-desc' name='post-desc'></textarea>
-      </div>
-      <br />
-      <div class='form-group'>
-        <button type='submit' class='btn btn-primary signupBtn'>Create</button>
-      </div>
-    </form>
+{{#if blogs.lenght}}
+<div>
+{{#each blogs as |blog| }}
+<div>
+  <div class="blogrow">
+    <h2>
+      <a class="blogtitle" href="/update/{{blog.id}}">{{blog.name}}</a>
+    </h2>
+    <p class="pPost">{{format_date date_created}}</p>
   </div>
-
 </div>
-
-<script src='./js/forBlog.js'></script>
+<br>
+{{/each}}
+</div>
+{{/if}}
+<br><br><br>
+<div class=''>
+  <button class='' href="/blog">+ New Post</button>
+</div>

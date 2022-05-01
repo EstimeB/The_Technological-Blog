@@ -1,14 +1,17 @@
 [
   {
     "name": "TechCrunch",
-    "post_description": "Founded by Michael Arrington and later sold to AOL, TechCrunch has remained as one of the leaders covering tech industry news."
+    "post_description": "Founded by Michael Arrington and later sold to AOL, TechCrunch has remained as one of the leaders covering tech industry news.",
+    "user_name": "Amiko"
   },
   {
     "name": "Gizmodo",
-    "post_description": "Originally launched as a part of Gawker Media Network, Gizmodo is a design, technology, science and science fiction website that also features articles on politics."
+    "post_description": "Originally launched as a part of Gawker Media Network, Gizmodo is a design, technology, science and science fiction website that also features articles on politics.",
+    "user_name": "Sal"
   },
   {
     "name": "Ars Technica",
-    "post_description": "Founded by Ken Fisher over 20 years ago, Arstechnica (Art of Technology) is devoted to the latest technology that would cater to what he called 'alpha geeks': technologists and IT professionals."
+    "post_description": "Founded by Ken Fisher over 20 years ago, Arstechnica (Art of Technology) is devoted to the latest technology that would cater to what he called 'alpha geeks': technologists and IT professionals.",
+    "user_name": "Lernantino"
   }
 ]
