@@ -59,7 +59,7 @@ router.get('/signup', (req, res) => {
 
 router.get('/login', (req, res) => {
   if (req.session.logged_in) {
-    res.redirect('/homepage');
+    res.redirect('/dashboard');
   }
   res.render('login');
 });
@@ -92,19 +92,15 @@ router.get('/update', withAuth, async (req, res) => {
 // Dashboard
 router.get('/dashboard', withAuth, async (req, res) => {
   try {
-    const blogData = await Blog.findAll({
-      include: [
-        {
-          model: User,
-          attributes: ['user_name'],
-        },
-      ],
+    const userData = await User.findByPk(req.session.user_id, {
+      attributes: { exclude: ['password'] },
+      include: [{ model: Blog }],
     });
 
-    const blogs = blogData.map((blog) => blog.get({ plain: true }));
+    const user = userData.get({ plain: true });
 
-    res.render('dasboard', {
-      blogs,
+    res.render('dashboard', {
+      ...user,
       logged_in: req.session.logged_in,
     });
   } catch (err) {
