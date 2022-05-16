@@ -89,18 +89,23 @@ router.get('/update', withAuth, async (req, res) => {
 });
 
 
-// Dashboard, display user
+// Dashboard, display user blogs
 router.get('/dashboard', withAuth, async (req, res) => {
   try {
-    const userData = await User.findByPk(req.session.user_id, {
-      attributes: { exclude: ['password'] },
-      include: [{ model: Blog }],
-    });
+    // const userData = await User.findAll({
+    //   attributes: { exclude: ['password'] },
+    //   include: [{ model: Blog }],
+    // });
+    if (req.session.user_id) {
+      const blogData = await Blog.findAll();
 
-    const user = userData.get({ plain: true });
+      const blogs = blogData.map((blog) => blog.get({ plain: true }));
+
+    // const user = userData.map((blog) => blog.get({ plain: true }));
 
     res.render('dashboard', {
-      ...user,
+      ...blogs,
+      // ...user,
       logged_in: req.session.logged_in,
     });
   } catch (err) {

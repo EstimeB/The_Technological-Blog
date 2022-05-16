@@ -97,7 +97,7 @@ router.get('/dashboard', withAuth, async (req, res) => {
       include: [{ model: Blog }],
     });
 
-    const user = userData.get({ plain: true });
+    const user = userData.map((blog) => blog.get({ plain: true }));
 
     res.render('dashboard', {
       ...user,

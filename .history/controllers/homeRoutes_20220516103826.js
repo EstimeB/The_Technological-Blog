@@ -89,15 +89,15 @@ router.get('/update', withAuth, async (req, res) => {
 });
 
 
-// Dashboard, display user
+// Dashboard, display user blogs
 router.get('/dashboard', withAuth, async (req, res) => {
   try {
-    const userData = await User.findByPk(req.session.user_id, {
+    const userData = await User.findAll({
       attributes: { exclude: ['password'] },
       include: [{ model: Blog }],
     });
 
-    const user = userData.get({ plain: true });
+    const user = userData.map((blog) => blog.get({ plain: true }));
 
     res.render('dashboard', {
       ...user,
