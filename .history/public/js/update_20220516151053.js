@@ -1,7 +1,6 @@
 const newFormHandler = async (event) => {
   event.preventDefault();
 
-  const id = document.querySelector('#post-id').value;
   const name = document.querySelector('#post-name').value.trim();
   const post_description = document.querySelector('#post-desc').value.trim();
 
@@ -21,7 +20,6 @@ const newFormHandler = async (event) => {
     }
   }
 };
-console.log(newFormHandler());
 
 const delButtonHandler = async (event) => {
   if (event.target.hasAttribute('data-id')) {
@@ -39,6 +37,10 @@ const delButtonHandler = async (event) => {
   }
 };
 
-document.querySelector('#submitIt').addEventListener('click', newFormHandler);
+document
+  .querySelector('#submitIt')
+  .addEventListener('submit', newFormHandler);
 
-document.querySelector('#deleteIt').addEventListener('click', delButtonHandler);
+document
+  .querySelector('#deleteIt')
+  .addEventListener('click', delButtonHandler);

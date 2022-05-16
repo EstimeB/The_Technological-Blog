@@ -15,17 +15,40 @@ router.post('/', withAuth, async (req, res) => {
   }
 });
 
-router.put('/update/:id', withAuth, async (req, res) => {
+// router.post('/update/:id', withAuth, async (req, res) => {
+//   try {
+//     const updateBlog = await Blog.update({
+//       ...req.body.name,
+//       ...req.body.post_description,
+//       user_id: req.session.user_id,
+//     },
+//     { where: {
+//       id: req.body.id,
+//       user_id: req.session.user_id,
+//     }
+//     },
+//     );
+
+//     res.status(200).json(updateBlog);
+//   } catch (err) {
+//     res.status(400).json(err);
+//   }
+// });
+
+router.put('/:id', withAuth, async (req, res) => {
   try {
     const updateBlog = await Blog.update({
-      ...req.body,
+      ...req.body.name,
+      ...req.body.post_description,
       user_id: req.session.user_id,
     },
     { where: {
-      id: req.params.id,
+      id: req.body.id,
       user_id: req.session.user_id,
     }
-    });
+    },
+    );
+
     res.status(200).json(updateBlog);
   } catch (err) {
     res.status(400).json(err);

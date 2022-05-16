@@ -2,17 +2,17 @@
     <h3 class='h2'>Update your Post</h3>
 
     <form class='form new-post-form signL'>
-       <input type="hidden" name="post-id" value="{{id}}" id="post-id" />
+       <input type="hidden" name="post-id" value="{{blog.id}}" id="post-id" />
       <div class='form-group'>
         <label for='post-name'>Blog Title:</label>
         <br />
-        <input class='form-input ifeatures' type='text' id='post-name' name='post-name' value={{name}} />
+        <input class='form-input ifeatures' type='text' id='post-name' name='post-name' value={{blog.name}} />
         <br />
       </div>
       <div class='form-group'>
         <label for='post-desc'>Post Description:</label>
         <br>
-        <textarea class='form-input rowdash' id='post-desc' name='post-desc'>{{post_description}}</textarea>
+        <textarea class='form-input rowdash' id='post-desc' name='post-desc'>{{blog.post_description}}</textarea>
       </div>
       <br>
       <div class='form-group'>

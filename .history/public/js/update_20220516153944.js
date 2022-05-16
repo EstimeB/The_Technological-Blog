@@ -5,8 +5,8 @@ const newFormHandler = async (event) => {
   const name = document.querySelector('#post-name').value.trim();
   const post_description = document.querySelector('#post-desc').value.trim();
 
-  if (name && post_description) {
-    const response = await fetch(`/api/blogs/update/${id}`, {
+  if (id && name && post_description) {
+    const response = await fetch(`/api/blogs/${id}`, {
       method: 'PUT',
       body: JSON.stringify({ name, post_description }),
       headers: {
@@ -39,6 +39,10 @@ const delButtonHandler = async (event) => {
   }
 };
 
-document.querySelector('#submitIt').addEventListener('click', newFormHandler);
+document
+  .querySelector('#submitIt')
+  .addEventListener('submit', newFormHandler);
 
-document.querySelector('#deleteIt').addEventListener('click', delButtonHandler);
+document
+  .querySelector('#deleteIt')
+  .addEventListener('click', delButtonHandler);

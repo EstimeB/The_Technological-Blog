@@ -10,7 +10,7 @@ router.post('/', withAuth, async (req, res) => {
       user_id: req.session.user_id,
       blog_id: req.session.blog_id,
     });
-    // to return to post
+
     res.redirect( req.header('referrer'));
     // res.status(200).json(newComment);
   } catch (err) {
@@ -18,24 +18,24 @@ router.post('/', withAuth, async (req, res) => {
   }
 });
 
-// router.delete('/:id', withAuth, async (req, res) => {
-//   try {
-//     const commentData = await Comment.destroy({
-//       where: {
-//         id: req.params.id,
-//         user_id: req.session.user_id,
-//       },
-//     });
+router.delete('/:id', withAuth, async (req, res) => {
+  try {
+    const commentData = await Comment.destroy({
+      where: {
+        id: req.params.id,
+        user_id: req.session.user_id,
+      },
+    });
 
-//     if (!commentData) {
-//       res.status(404).json({ message: 'No comment found with this id!' });
-//       return;
-//     }
+    if (!commentData) {
+      res.status(404).json({ message: 'No comment found with this id!' });
+      return;
+    }
 
-//     res.status(200).json(commentData);
-//   } catch (err) {
-//     res.status(500).json(err);
-//   }
-// });
+    res.status(200).json(commentData);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
 
 module.exports = router;

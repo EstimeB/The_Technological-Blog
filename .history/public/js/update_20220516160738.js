@@ -1,5 +1,5 @@
 const newFormHandler = async (event) => {
-  event.preventDefault();
+  // event.preventDefault();
 
   const id = document.querySelector('#post-id').value;
   const name = document.querySelector('#post-name').value.trim();
@@ -39,6 +39,6 @@ const delButtonHandler = async (event) => {
   }
 };
 
-document.querySelector('#submitIt').addEventListener('click', newFormHandler);
+document.querySelector('#submitIt').addEventListener('submit', newFormHandler);
 
 document.querySelector('#deleteIt').addEventListener('click', delButtonHandler);

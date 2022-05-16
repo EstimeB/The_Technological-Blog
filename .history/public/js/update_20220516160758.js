@@ -39,6 +39,6 @@ const delButtonHandler = async (event) => {
   }
 };
 
-document.querySelector('#submitIt').addEventListener('click', newFormHandler);
+document.querySelector('#submitIt').addEventListener('submit', newFormHandler);
 
 document.querySelector('#deleteIt').addEventListener('click', delButtonHandler);

@@ -61,7 +61,7 @@ router.get('/login', (req, res) => {
   res.render('login');
 });
 
-// To update page
+// Update
 router.get('/update/:id', withAuth, async (req, res) => {
   try {
     const blogData = await Blog.findByPk(req.params.id, {
