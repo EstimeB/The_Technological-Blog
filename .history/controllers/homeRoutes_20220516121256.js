@@ -26,13 +26,7 @@ router.get('/', withAuth, async (req, res) => {
 router.get('/comment/:id', withAuth, async (req, res) => {
   try {
     const blogData = await Blog.findByPk(req.params.id, {
-      include: [
-        User,
-        {
-          model: Comment,
-          include: [User],
-        },
-      ],
+      include: [{ model: User, Comment}],
     });
 
     const blogs = blogData.get({ plain: true });
@@ -44,6 +38,7 @@ router.get('/comment/:id', withAuth, async (req, res) => {
   } catch (err) {
     res.status(500).json(err);
   }
+  console.log('comment');
 });
 
 // Signup/Login

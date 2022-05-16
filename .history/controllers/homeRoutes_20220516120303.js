@@ -32,13 +32,13 @@ router.get('/comment/:id', withAuth, async (req, res) => {
           model: Comment,
           include: [User],
         },
-      ],
+      ]
     });
 
-    const blogs = blogData.get({ plain: true });
-    console.log(blogs);
+    const blogs = blogData.map(comment).comment.get({ plain: true });
+
     res.render('comment', {
-      ...blogs,
+      ...comment,
       logged_in: req.session.logged_in,
     });
   } catch (err) {

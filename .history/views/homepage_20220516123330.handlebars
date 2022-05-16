@@ -1,0 +1,14 @@
+{{#each blogs as |blog| }}
+<div class="signF">
+  <div class="blogrow">
+    <h2>
+      <a class="blogtitle"  href="/comment/{{blog.id}}">{{blog.name}}</a>
+    </h2>
+    <p class="pPost">Posted by {{blog.user.user_name}} on {{format_date date_created}}</p>
+  </div>
+  <p class="signO">
+    {{blog.post_description}}
+  </p>
+</div>
+  <br>
+{{/each}}
