@@ -2,7 +2,7 @@ const newFormHandler = async (event) => {
   event.preventDefault();
 
   const name = document.querySelector('#post-name').value.trim();
-  const post_description = document.querySelector('#post-desc').value.trim();
+  const post_description = document.getElementById('post-desc').value.trim();
 
   if (name && post_description) {
     const response = await fetch(`/api/blogs/update/${id}`, {
@@ -25,7 +25,7 @@ const delButtonHandler = async (event) => {
   if (event.target.hasAttribute('data-id')) {
     const id = event.target.getAttribute('data-id');
 
-    const response = await fetch(`/api/blogs/${id}`, {
+    const response = await fetch(`/api/blog/${id}`, {
       method: 'DELETE',
     });
 
