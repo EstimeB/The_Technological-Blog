@@ -65,7 +65,7 @@ router.get('/login', (req, res) => {
 });
 
 // Update
-router.get('/update/:id', withAuth, async (req, res) => {
+router.get('/update', withAuth, async (req, res) => {
   try {
     const blogData = await Blog.findByPk(req.params.id, {
       include: [

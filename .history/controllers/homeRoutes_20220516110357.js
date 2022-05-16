@@ -65,7 +65,7 @@ router.get('/login', (req, res) => {
 });
 
 // Update
-router.get('/update/:id', withAuth, async (req, res) => {
+router.get('/update', withAuth, async (req, res) => {
   try {
     const blogData = await Blog.findByPk(req.params.id, {
       include: [
@@ -80,7 +80,7 @@ router.get('/update/:id', withAuth, async (req, res) => {
     const blogs = blogData.get({ plain: true });
 
     res.render('update', {
-      ...blogs,
+      blogs,
       logged_in: req.session.logged_in,
     });
   } catch (err) {
