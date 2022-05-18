@@ -1,14 +1,17 @@
 [
     {
-      "user_name": "Sal",
-      "comment_des": "Hello friend, outstaanding post!"
+      "user_id": 2,
+      "comment_des": "Hello friend, outstaanding post!",
+      "blog_id": 3
     },
     {
-      "user_name": "Lernantino",
-      "comment_des": "Nice post! Been looking for a blog with that description."
+      "user_id": 3,
+      "comment_des": "Nice post! Been looking for a blog with that description.",
+      "blog_id": 1
     },
     {
-      "user_name": "Amiko",
-      "comment_des": "Thank you for the post, very informative. I will definitely check it out later."
+      "user_id": 1,
+      "comment_des": "Thank you for the post, very informative. I will definitely check it out later.",
+      "blog_id": 2
     }
   ]
