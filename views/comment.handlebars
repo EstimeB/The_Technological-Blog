@@ -8,36 +8,43 @@
       {{format_date date_created}}</p>
   </div>
   <div class='signL'>
-    <p class="signL">{{post_description}}</p>
+    <p class='signL'>{{post_description}}</p>
   </div>
 </div>
 
 <br />
 
 {{! Comments }}
-{{#if comments.length}}
+{{!-- {{#if comments.length}} --}}
 {{#each comments as |comment|}}
-<div class="comment-list signF">
-  <h2 class="none"></h2>
-  <p class="signL">{{comment.comment_des}}</p>
-  <br>
-  <p class="signL">-{{comment.user.user_name}}, {{format_date date_created}}</p>
-  {{/each}}
-</div>
-{{/if}}
+  <div class='comment-list signF'>
+    <h2 class='none'></h2>
+    <p class='signL'>{{comment.comment_des}}</p>
+    <br />
+    <p class='signL'>-{{comment.user.user_name}},
+      {{format_date date_created}}</p>
+  </div>
+  <br />
+{{/each}}
+{{!-- {{/if}} --}}
 
-<div class="signF">
-  <h2 class="none"></h2>
+<div class='signF'>
+  <h2 class='none'></h2>
 
   <form class='form new-comment-form signL'>
-    <div class="form-group">
-    <label for="signL">Comment</label>
-    <input class="comment-input rowdash" type="text" id="comment-desc" name="comment-desc" />
+    <div class='form-group'>
+      <label for='signL'>Comment</label>
+      <input
+        class='comment-input rowdash'
+        type='text'
+        id='comment-desc'
+        name='comment-desc'
+      />
     </div>
     <br />
-      <div class='form-group'>
-        <button type='submit' class='btn btn-primary signupBtn'>Submit</button>
-      </div>
+    <div class='form-group'>
+      <button type='submit' class='btn btn-primary signupBtn'>Submit</button>
+    </div>
   </form>
 </div>
 

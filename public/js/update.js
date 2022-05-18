@@ -21,7 +21,6 @@ const newFormHandler = async (event) => {
     }
   }
 };
-console.log(newFormHandler());
 
 const delButtonHandler = async (event) => {
   if (event.target.hasAttribute('data-id')) {
