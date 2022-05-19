@@ -15,7 +15,6 @@
 <br />
 
 {{! Comments }}
-{{!-- {{#if comments.length}} --}}
 {{#each comments as |comment|}}
   <div class='comment-list signF'>
     <h2 class='none'></h2>
@@ -26,7 +25,6 @@
   </div>
   <br />
 {{/each}}
-{{!-- {{/if}} --}}
 
 <div class='signF'>
   <h2 class='none'></h2>
@@ -34,7 +32,7 @@
   <form class='form new-comment-form signL'>
     <div class='form-group'>
       <label for='signL'>Comment</label>
-      <textarea class='comment-input rowdash' id='comment-desc' name='comment-desc'></textarea>
+      <textarea class='comment-input rowdash' data-blog-id="{{id}}" id='comment-desc' name='comment-desc'></textarea>
     </div>
     <br />
     <div class='form-group'>
@@ -43,4 +41,4 @@
   </form>
 </div>
 
-<script src='./js/forComment.js'></script>
+<script src='/js/forComment.js'></script>

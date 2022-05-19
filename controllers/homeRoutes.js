@@ -33,13 +33,13 @@ router.get('/comment/:id', withAuth, async (req, res) => {
         },
         {
           model: Comment,
+          include: [User]
         },
       ],
 
     });
 
     const blogs = blogData.get({ plain: true });
-    console.log(blogs);
     res.render('comment', {
       ...blogs,
       logged_in: req.session.logged_in,
