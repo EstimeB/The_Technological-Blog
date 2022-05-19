@@ -16,7 +16,7 @@ A CMS-style blog site similar to a Wordpress site. Follows the MVC paradigm in i
  Click on the deployed Heroku link under the test section. 
 
 ### Usage 
- Created for and will be used by developers to publish articles, blog posts thoughts and opinions, as well commenting on other developers’ posts. 
+ Created for and will be used by developers to publish articles, blog posts, thoughts, and opinions, as well commenting on other developers’ posts. 
 
 ### License 
  MIT license
