@@ -73,6 +73,13 @@ body {
     color: beige;
     font-size: 20px;
 }
+.dashPost {
+    display: inline-flex;
+    background-color: grey;
+    color: beige;
+    width: 100%;
+    gap: 60.5%;
+}
 
 /* Comment.handlebar */
 .none {
