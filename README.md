@@ -45,5 +45,5 @@ A CMS-style blog site similar to a Wordpress site. Follows the MVC paradigm in i
 ![Screen Shot 0004-05-19 at 15 33 38](https://user-images.githubusercontent.com/101056987/169416495-8c1f2f11-2908-4d69-b586-8fea26d07124.jpeg)
 ![Screen Shot 0004-05-19 at 15 34 16](https://user-images.githubusercontent.com/101056987/169416529-8958e776-e602-45ed-9287-d92b9739bfda.jpeg)
 ![Screen Shot 0004-05-19 at 15 34 36](https://user-images.githubusercontent.com/101056987/169416561-214e4960-cf08-49ed-921b-4ebcf321c78b.jpeg)
-![Screen Shot 0004-05-19 at 15 35 39](https://user-images.githubusercontent.com/101056987/169416572-d376fc6d-86fa-4a5f-b6e4-b05![Screen Shot 0004-05-19 at 15 35 27](https://user-images.githubusercontent.com/101056987/169416587-15a98974-a00a-4e47-9946-4cfcdcb7a590.jpeg)
-f1fb5bd30.jpeg)
+![Screen Shot 0004-05-19 at 15 35 39](https://user-images.githubusercontent.com/101056987/169416762-0aab5789-779e-4da2-8204-6cca96880190.jpeg)
+![Screen Shot 0004-05-19 at 15 35 27](https://user-images.githubusercontent.com/101056987/169416777-f1c75404-c479-436a-94b2-e541626c4d21.jpeg)
