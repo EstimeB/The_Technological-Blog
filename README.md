@@ -34,7 +34,7 @@ A CMS-style blog site similar to a Wordpress site. Follows the MVC paradigm in i
 * When user click on existing posts in the homepage, user will be redirected to the comment page where they will be presented with all existing comments for the post and the option to leave a comment.
 * When user click on logout, user is signed out of the site. User will only be able to view existing posts on the homepage.
 
-[Deployed Heroku Link](https://fast-peak-60932.herokuapp.com/)
+[Deployed Heroku Link](https://quiet-woodland-72863.herokuapp.com/)
 
 ### Questions 
  Any questions please email me at estimebrithnie@yahoo.com 
